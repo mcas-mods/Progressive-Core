@@ -43,7 +43,7 @@ public class ItemArmorPro extends ItemArmor implements IItemPro, ITab {
 	
 	public ItemArmorPro(ArmorMaterial material, ArmorSet set, EntityEquipmentSlot slot, String name) {
 		super(material, 0, slot);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setCreativeTab(null);
 		
 		this.set = set;
@@ -54,10 +54,10 @@ public class ItemArmorPro extends ItemArmor implements IItemPro, ITab {
 	public String getName() {
 		return name;
 	}
-	
+
 	@Override
-	public Item setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Item setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProModelHandler.register(this);
@@ -83,7 +83,7 @@ public class ItemArmorPro extends ItemArmor implements IItemPro, ITab {
 			return multimap;
 		
 		if (slot == armorType)
-			set.getHandler().addAttributes(multimap, new UUID((getUnlocalizedName() + slot.toString()).hashCode(), 0), slot, stack);
+			set.getHandler().addAttributes(multimap, new UUID((getTranslationKey() + slot.toString()).hashCode(), 0), slot, stack);
 
 		return multimap;
 	}

@@ -62,7 +62,7 @@ public class BlockSmelter extends BlockContainer implements IBlockPro, ITab {
         super(level == 0 ? Material.ROCK : Material.IRON);
         this.level = level;
         this.isBurning = isBurning;
-        setUnlocalizedName(NAME + (level+1) + (isBurning ? "_on" : ""));
+        setTranslationKey(NAME + (level+1) + (isBurning ? "_on" : ""));
         setHardness(4);
         setHarvestLevel(Tool.PICKAXE.toString(), level+1);
         setSoundType(level == 0 ? SoundType.STONE : SoundType.METAL);
@@ -74,10 +74,10 @@ public class BlockSmelter extends BlockContainer implements IBlockPro, ITab {
     public int getLevel() {
 		return level;
 	}
-    
+
     @Override
-	public Block setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Block setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProRegistry.register(toItemBlock());
@@ -268,7 +268,7 @@ public class BlockSmelter extends BlockContainer implements IBlockPro, ITab {
 
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        EnumFacing enumfacing = EnumFacing.getFront(meta);
+        EnumFacing enumfacing = EnumFacing.byIndex(meta);
 
         if (enumfacing.getAxis() == EnumFacing.Axis.Y)
             enumfacing = EnumFacing.NORTH;

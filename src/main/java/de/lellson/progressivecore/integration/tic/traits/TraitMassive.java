@@ -31,7 +31,7 @@ public class TraitMassive extends AbstractTrait {
 		if (slot != EntityEquipmentSlot.MAINHAND)
 			return;
 		
-		UUID uuid = new UUID((stack.getItem().getUnlocalizedName() + slot.toString()).hashCode(), 0);
+		UUID uuid = new UUID((stack.getItem().getTranslationKey() + slot.toString()).hashCode(), 0);
 		attributeMap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(uuid, Constants.prefix("ticpro_massive"), 1 + ModifierExpanse.getLevel(stack), 0));
 	}
 }

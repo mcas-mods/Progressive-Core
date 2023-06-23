@@ -38,7 +38,7 @@ public class BlockMetaPro extends Block implements IBlockPro, ITab {
 		this.name = name;
 		this.variants = variants;
 		
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		
 		applyDefaultStats();
 	}
@@ -50,10 +50,10 @@ public class BlockMetaPro extends Block implements IBlockPro, ITab {
 	public String getName() {
 		return name;
 	}
-	
+
 	@Override
-	public Block setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Block setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProRegistry.register(toItemBlock());

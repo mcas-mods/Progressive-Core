@@ -78,10 +78,10 @@ public class BlockRealityEye extends BlockPro implements ITileEntityProvider, IT
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
     	return Item.getItemFromBlock(ProBlocks.REALITY_EYE);
     }
-    
+
+	@Override
     @SideOnly(Side.CLIENT)
-    @Override
-    public BlockRenderLayer getBlockLayer() {
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 

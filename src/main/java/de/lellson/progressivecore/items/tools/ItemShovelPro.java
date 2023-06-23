@@ -45,7 +45,7 @@ public class ItemShovelPro extends ItemSpade implements IItemPro, ITab, ITool {
 	
 	public ItemShovelPro(ToolMaterial material, ToolHandler handler, String name) {
 		super(material);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setCreativeTab(null);
 		
 		this.name = name;
@@ -99,10 +99,10 @@ public class ItemShovelPro extends ItemSpade implements IItemPro, ITab, ITool {
 		if (canUse(stack))
 			getHandler().onUsingStopped(stack, world, entity, getMaxItemUseDuration(stack)-timeLeft);
 	}
-	
+
 	@Override
-	public Item setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Item setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProModelHandler.register(this);
@@ -119,7 +119,7 @@ public class ItemShovelPro extends ItemSpade implements IItemPro, ITab, ITool {
 			return multimap;
 		
 		if (slot == EntityEquipmentSlot.MAINHAND)
-			getHandler().addAttributes(multimap, new UUID((getUnlocalizedName() + slot.toString()).hashCode(), 0), slot, stack);
+			getHandler().addAttributes(multimap, new UUID((getTranslationKey() + slot.toString()).hashCode(), 0), slot, stack);
 
 		return multimap;
 	}

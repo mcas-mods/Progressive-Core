@@ -27,6 +27,11 @@ public abstract class ProTab extends CreativeTabs {
 	public static final ProTab TAB_MATERIALS = new ProTab(Tab.MATERIALS)
 	{
 		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(getItem(), 1, getMeta());
+		}
+
+		@Override
 		protected Item getItem() {
 			return ProItems.GEM;
 		}
@@ -45,6 +50,11 @@ public abstract class ProTab extends CreativeTabs {
 	public static final ProTab TAB_BLOCKS = new ProTab(Tab.BLOCKS)
 	{
 		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(getItem(), 1, getMeta());
+		}
+
+		@Override
 		protected Item getItem() {
 			return ProBlocks.BLOCK_GEM.toItemBlock();
 		}
@@ -62,6 +72,11 @@ public abstract class ProTab extends CreativeTabs {
 	};
 	public static final ProTab TAB_COMBAT = new ProTab(Tab.COMBAT)
 	{
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(getItem(),1,getMeta());
+		}
+
 		private int lastIndex = -1;
 		
 		@Override
@@ -78,6 +93,11 @@ public abstract class ProTab extends CreativeTabs {
 	};
 	public static final ProTab TAB_TOOLS = new ProTab(Tab.TOOLS)
 	{
+		@Override
+		public ItemStack createIcon() {
+			return new ItemStack(getItem(),1,getMeta());
+		}
+
 		private int lastIndex = -1;
 		
 		@Override
@@ -99,6 +119,11 @@ public abstract class ProTab extends CreativeTabs {
 		if (Mod.BAUBLES.isLoaded())
 			tab_accessories = new ProTab(Tab.ACCESSORIES)
 			{
+				@Override
+				public ItemStack createIcon() {
+					return new ItemStack(getItem(),1,getMeta());
+				}
+
 				@Override
 				protected Item getItem() {
 					return ProIntegration.getAccessoryIconItem();
@@ -125,8 +150,7 @@ public abstract class ProTab extends CreativeTabs {
 		super("tabProgressiveCore");
 		this.tab = tab;
 	}
-	
-	@Override
+
 	public ItemStack getTabIconItem() {
 		return new ItemStack(getItem(), 1, getMeta());
 	}
@@ -137,7 +161,6 @@ public abstract class ProTab extends CreativeTabs {
 		return 0;
 	}
 
-	@Override
 	public ItemStack getIconItemStack() {
 		return icon;
 	}

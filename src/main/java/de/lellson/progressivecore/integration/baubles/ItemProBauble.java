@@ -172,7 +172,7 @@ public class ItemProBauble extends ItemPro implements IBauble {
 		
 		for (Power power : getPowers(stack))
 		{
-			power.getPower().modifyAttributeModifiers(stack, player, power.getLevel(), new UUID((getUnlocalizedName() + stack.getTagCompound().getInteger(KEY_SLOT)).hashCode(), 0), map);
+			power.getPower().modifyAttributeModifiers(stack, player, power.getLevel(), new UUID((getTranslationKey() + stack.getTagCompound().getInteger(KEY_SLOT)).hashCode(), 0), map);
 		}
 		
 		return map;

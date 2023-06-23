@@ -46,7 +46,7 @@ public class ItemAxePro extends ItemAxe implements IItemPro, ITab, ITool {
 	
 	public ItemAxePro(ToolMaterial material, ToolHandler handler, Tier tier, String name) {
 		super(material, tier.getAxeAttackDamage(), tier.getAxeSpeed());
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		setCreativeTab(null);
 		
 		this.name = name;
@@ -56,7 +56,7 @@ public class ItemAxePro extends ItemAxe implements IItemPro, ITab, ITool {
 	
 	public ItemAxePro(ToolMaterial material, String name) {
 		super(material);
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		
 		this.name = name;
 	}
@@ -107,10 +107,10 @@ public class ItemAxePro extends ItemAxe implements IItemPro, ITab, ITool {
 		if (canUse(stack))
 			getHandler().onUsingStopped(stack, world, entity, getMaxItemUseDuration(stack)-timeLeft);
 	}
-	
+
 	@Override
-	public Item setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Item setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProModelHandler.register(this);
@@ -127,7 +127,7 @@ public class ItemAxePro extends ItemAxe implements IItemPro, ITab, ITool {
 			return multimap;
 		
 		if (slot == EntityEquipmentSlot.MAINHAND)
-			getHandler().addAttributes(multimap, new UUID((getUnlocalizedName() + slot.toString()).hashCode(), 0), slot, stack);
+			getHandler().addAttributes(multimap, new UUID((getTranslationKey() + slot.toString()).hashCode(), 0), slot, stack);
 
 		return multimap;
 	}

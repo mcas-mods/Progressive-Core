@@ -31,7 +31,7 @@ public class ModifierExpanse extends ModifierTrait  {
 		if (slot != EntityEquipmentSlot.MAINHAND)
 			return;
 		
-		UUID uuid = new UUID((stack.getItem().getUnlocalizedName() + slot.toString()).hashCode(), 0);
+		UUID uuid = new UUID((stack.getItem().getTranslationKey() + slot.toString()).hashCode(), 0);
 		attributeMap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(uuid, Constants.prefix("ticpro_expanse"), getData(stack).level, 0));
 	}
 

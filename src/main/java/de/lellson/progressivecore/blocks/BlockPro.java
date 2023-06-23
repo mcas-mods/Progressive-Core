@@ -37,7 +37,7 @@ public class BlockPro extends Block implements IBlockPro, ITab {
 
 		this.name = name;
 		
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		
 		applyDefaultStats();
 	}
@@ -47,8 +47,8 @@ public class BlockPro extends Block implements IBlockPro, ITab {
 	}
 	
 	@Override
-	public Block setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Block setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProRegistry.register(toItemBlock());

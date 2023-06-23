@@ -14,7 +14,7 @@ public class BlockProMoltenMetal extends BlockFluidClassic {
 		super(fluid, Material.LAVA);
 		this.color = color;
 		setRegistryName("molten_" + fluid.getName());
-		setUnlocalizedName(getRegistryName().toString());
+		setTranslationKey(getRegistryName().toString());
 		setLightLevel(1.0f);
 		ProRegistry.register(this);
 		ProModelHandler.register(this);

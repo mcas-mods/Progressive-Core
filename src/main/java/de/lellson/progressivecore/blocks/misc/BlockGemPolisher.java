@@ -69,10 +69,10 @@ public class BlockGemPolisher extends BlockPro implements ITileEntityProvider, I
     public EnumBlockRenderType getRenderType(IBlockState state) {
         return EnumBlockRenderType.MODEL;
     }
-    
-    @SideOnly(Side.CLIENT)
+
     @Override
-    public BlockRenderLayer getBlockLayer() {
+    @SideOnly(Side.CLIENT)
+    public BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.CUTOUT;
     }
 

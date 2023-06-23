@@ -8,7 +8,7 @@ public class Constants {
 	
 	public static final String MOD_ID = "progressivecore";
 	public static final String MOD_NAME = "Progressive Core";
-	public static final String MOD_VERSION = "0.1";
+	public static final String MOD_VERSION = "0.4";
 	public static final String PREFIX = MOD_ID + ":";
 	
 	public static final String PROXY_CLIENT = "de.lellson.progressivecore.ClientProxy";

@@ -38,7 +38,7 @@ public class ItemBlockMetaPro extends ItemBlock {
 	}
 	
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 		int dmg = stack.getItemDamage();
 		return "tile." + block.getName() + (dmg >= block.getVariants().length ? "" : "_" + block.getVariants()[dmg]);
 	}

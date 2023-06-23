@@ -23,7 +23,7 @@ public class ItemPro extends Item implements IItemPro, ITab {
 	private int burnTime = -1;
 	
 	public ItemPro(String name, String... variants) {
-		setUnlocalizedName(name);
+		setTranslationKey(name);
 		
 		if (variants.length > 0)
 			setHasSubtypes(true);
@@ -40,18 +40,19 @@ public class ItemPro extends Item implements IItemPro, ITab {
 		return name;
 	}
 	
+
 	@Override
-	public Item setUnlocalizedName(String name) {
-		super.setUnlocalizedName(name);
+	public Item setTranslationKey(String name) {
+		super.setTranslationKey(name);
 		setRegistryName(new ResourceLocation(Constants.prefix(name)));
 		ProRegistry.register(this);
 		ProModelHandler.register(this);
 		
 		return this;
 	}
-	
+
 	@Override
-	public String getUnlocalizedName(ItemStack stack) {
+	public String getTranslationKey(ItemStack stack) {
 		int dmg = stack.getItemDamage();
 		return "item." + (dmg >= variants.length ? name : name + "_" + variants[dmg]);
 	}
