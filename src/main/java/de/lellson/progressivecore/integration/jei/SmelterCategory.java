@@ -71,7 +71,6 @@ public class SmelterCategory implements IRecipeCategory<SmelterWrapper>{
 		}
 			
 		recipeLayout.getItemStacks().init(6, true, 20, 15);
-		recipeLayout.getItemStacks().set(6, inputs.get(6));
 		
 		recipeLayout.getItemStacks().init(7, false, 128, 15);
 		recipeLayout.getItemStacks().set(7, ingredients.getOutputs(ItemStack.class).get(0));

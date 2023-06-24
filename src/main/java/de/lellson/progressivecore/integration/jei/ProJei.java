@@ -45,7 +45,7 @@ public class ProJei implements IModPlugin {
 			registry.handleRecipes(SmelterEntry.class, SmelterWrapper::new, SmelterCategory.getUid(i));
 			registry.addRecipes(SmelterEntry.getEntries(i), SmelterCategory.getUid(i));
 			registry.addRecipeCatalyst(new ItemStack(BlockSmelter.getSmelter(i, false)), SmelterCategory.getUid(i));
-			registry.getRecipeTransferRegistry().addRecipeTransferHandler(ContainerSmelter.class, SmelterCategory.getUid(i), 0, 8, 8, 36);
+			registry.getRecipeTransferRegistry().addRecipeTransferHandler(new SmelterRecipeTransferInfo(i));
 		}
 		
 		registry.handleRecipes(PolisherEntry.class, PolisherWrapper::new, PolisherCategory.ID);

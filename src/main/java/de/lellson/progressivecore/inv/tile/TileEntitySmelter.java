@@ -213,7 +213,7 @@ public abstract class TileEntitySmelter extends TileEntityLockable implements IT
     		
     		if (fuel.isEmpty())
     		{
-                this.smelterItemStacks.set(1, fuelItem.getContainerItem(fuel));
+                this.smelterItemStacks.set(6, fuelItem.getContainerItem(fuel));
     		}
     	}
     	

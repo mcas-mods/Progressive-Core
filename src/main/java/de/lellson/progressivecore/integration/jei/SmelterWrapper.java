@@ -41,8 +41,7 @@ public class SmelterWrapper implements IRecipeWrapper {
         }
         for (int i = input.size(); i < 6; i++)
         	input.add(Arrays.asList(ItemStack.EMPTY));
-        
-        input.add(ProJei.fuels);
+
         
         ingredients.setInputLists(ItemStack.class, input);
 	}
